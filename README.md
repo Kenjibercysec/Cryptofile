@@ -1,9 +1,13 @@
 # Explorador de Arquivos Seguro
 
+Um conjunto de ferramentas para criptografia de arquivos, incluindo um explorador de arquivos seguro e um criptografador automático.
+
+## Ferramentas Disponíveis
+
+### 1. SecureExplorer.exe
 Um explorador de arquivos com criptografia avançada e proteção por senha, compatível com Windows e Linux.
 
-## Características
-
+#### Características:
 - Interface gráfica moderna e intuitiva
 - Criptografia forte usando Fernet (AES-128-CBC)
 - Proteção por senha com PBKDF2HMAC
@@ -11,14 +15,30 @@ Um explorador de arquivos com criptografia avançada e proteção por senha, com
 - Navegação de arquivos integrada
 - Criptografia e descriptografia de arquivos individuais
 
+### 2. AutoEncryptor.exe
+Um criptografador automático que protege arquivos nas pastas Documentos e Downloads com uma senha pré-definida.
+
+#### Características:
+- Criptografia automática de arquivos
+- Senha pré-definida no código
+- Interface simples e direta
+- Criptografia em lote
+- Feedback visual do progresso
+
 ## Requisitos
 
-- Python 3.8 ou superior
-- Bibliotecas listadas em `requirements.txt`
+- Windows 10/11 ou Linux
+- Python 3.8 ou superior (apenas para desenvolvimento)
+- Bibliotecas listadas em `requirements.txt` (apenas para desenvolvimento)
 
 ## Instalação
 
-1. Clone este repositório ou baixe os arquivos
+### Para Usuários Finais:
+1. Baixe os executáveis da pasta `dist`
+2. Execute o programa desejado
+
+### Para Desenvolvedores:
+1. Clone este repositório
 2. Instale as dependências:
 ```bash
 pip install -r requirements.txt
@@ -26,24 +46,32 @@ pip install -r requirements.txt
 
 ## Uso
 
-Execute o programa:
-```bash
-python secure_explorer.py
-```
-
-### Como usar
-
-1. **Criptografar um arquivo**:
-   - Clique no botão "Criptografar Arquivo"
-   - Selecione o arquivo desejado
+### SecureExplorer.exe
+1. Execute o arquivo `SecureExplorer.exe`
+2. Use a interface para navegar pelos arquivos
+3. Para criptografar um arquivo:
+   - Selecione o arquivo
    - Digite uma senha forte
-   - O arquivo será criptografado e o original será removido
-
-2. **Descriptografar um arquivo**:
-   - Clique no botão "Descriptografar Arquivo"
+   - Confirme a operação
+4. Para descriptografar:
    - Selecione o arquivo criptografado
    - Digite a senha correta
-   - O arquivo será descriptografado e o arquivo criptografado será removido
+   - O arquivo será restaurado
+
+### AutoEncryptor.exe
+1. Antes de usar, edite o arquivo `auto_encrypt.py` e altere a senha pré-definida:
+```python
+PREDEFINED_PASSWORD = "sua_senha_aqui"  # Altere para a senha desejada
+```
+2. Recompile o executável:
+```bash
+pyinstaller --onefile --windowed --name "AutoEncryptor" auto_encrypt.py
+```
+3. Execute o `AutoEncryptor.exe`
+4. O programa irá automaticamente:
+   - Criptografar todos os arquivos nas pastas Documentos e Downloads
+   - Usar a senha pré-definida
+   - Mostrar o progresso da operação
 
 ## Segurança
 
@@ -53,6 +81,20 @@ python secure_explorer.py
 - Arquivos originais são removidos após criptografia
 - Arquivos criptografados são removidos após descriptografia
 
-## Aviso
+## Avisos Importantes
 
-Este software é fornecido "como está", sem garantias. O desenvolvedor não se responsabiliza por qualquer perda de dados ou problemas decorrentes do uso deste software. 
+1. **AutoEncryptor.exe**:
+   - Criptografa automaticamente todos os arquivos nas pastas Documentos e Downloads
+   - Mantenha a senha pré-definida em um lugar seguro
+   - Faça backup dos arquivos importantes antes de usar
+   - O processo não pode ser desfeito sem a senha correta
+
+2. **SecureExplorer.exe**:
+   - Use senhas fortes
+   - Mantenha suas senhas em um lugar seguro
+   - Faça backup dos arquivos importantes antes de criptografá-los
+   - Não perca a senha, pois não há como recuperar arquivos sem ela
+
+## Aviso Legal
+
+Este software é fornecido "como está", sem garantias. O desenvolvedor não se responsabiliza por qualquer perda de dados ou problemas decorrentes do uso deste software. Use por sua conta e risco. 
