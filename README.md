@@ -1,100 +1,100 @@
-# Secure File Explorer
+# Explorador de Arquivos Seguro
 
-A set of tools for file encryption, including a secure file explorer and an automatic encryptor.
+Um conjunto de ferramentas para criptografia de arquivos, incluindo um explorador de arquivos seguro e um criptografador automático.
 
-## Available Tools
+## Ferramentas Disponíveis
 
 ### 1. SecureExplorer.exe
-A file explorer with advanced encryption and password protection, compatible with Windows and Linux.
+Um explorador de arquivos com criptografia avançada e proteção por senha, compatível com Windows e Linux.
 
-#### Features:
-- Modern and intuitive graphical interface
-- Strong encryption using Fernet (AES-128-CBC)
-- Password protection with PBKDF2HMAC
-- Compatible with Windows and Linux
-- Integrated file navigation
-- Individual file encryption and decryption
+#### Características:
+- Interface gráfica moderna e intuitiva
+- Criptografia forte usando Fernet (AES-128-CBC)
+- Proteção por senha com PBKDF2HMAC
+- Compatível com Windows e Linux
+- Navegação de arquivos integrada
+- Criptografia e descriptografia de arquivos individuais
 
 ### 2. AutoEncryptor.exe
-An automatic encryptor that protects files in the Documents and Downloads folders with a predefined password.
+Um criptografador automático que protege arquivos nas pastas Documentos e Downloads com uma senha pré-definida.
 
-#### Features:
-- Automatic file encryption
-- Predefined password in the code
-- Simple and straightforward interface
-- Batch encryption
-- Visual progress feedback
+#### Características:
+- Criptografia automática de arquivos
+- Senha pré-definida no código
+- Interface simples e direta
+- Criptografia em lote
+- Feedback visual do progresso
 
-## Requirements
+## Requisitos
 
-- Windows 10/11 or Linux
-- Python 3.8 or higher (development only)
-- Libraries listed in `requirements.txt` (development only)
+- Windows 10/11 ou Linux
+- Python 3.8 ou superior (apenas para desenvolvimento)
+- Bibliotecas listadas em `requirements.txt` (apenas para desenvolvimento)
 
-## Installation
+## Instalação
 
-### For End Users:
-1. Download the executables from the `dist` folder
-2. Run the desired program
+### Para Usuários Finais:
+1. Baixe os executáveis da pasta `dist`
+2. Execute o programa desejado
 
-### For Developers:
-1. Clone this repository
-2. Install dependencies:
+### Para Desenvolvedores:
+1. Clone este repositório
+2. Instale as dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## Uso
 
 ### SecureExplorer.exe
-1. Run the `SecureExplorer.exe` file
-2. Use the interface to navigate through files
-3. To encrypt a file:
-   - Select the file
-   - Enter a strong password
-   - Confirm the operation
-4. To decrypt:
-   - Select the encrypted file
-   - Enter the correct password
-   - The file will be restored
+1. Execute o arquivo `SecureExplorer.exe`
+2. Use a interface para navegar pelos arquivos
+3. Para criptografar um arquivo:
+   - Selecione o arquivo
+   - Digite uma senha forte
+   - Confirme a operação
+4. Para descriptografar:
+   - Selecione o arquivo criptografado
+   - Digite a senha correta
+   - O arquivo será restaurado
 
 ### AutoEncryptor.exe
-1. Before using, edit the `auto_encrypt.py` file and change the predefined password:
+1. Antes de usar, edite o arquivo `auto_encrypt.py` e altere a senha pré-definida:
 ```python
-PREDEFINED_PASSWORD = "your_password_here"  # Change to desired password
+PREDEFINED_PASSWORD = "sua_senha_aqui"  # Altere para a senha desejada
 ```
-2. Recompile the executable:
+2. Recompile o executável:
 ```bash
 pyinstaller --onefile --windowed --name "AutoEncryptor" auto_encrypt.py
 ```
-3. Run `AutoEncryptor.exe`
-4. The program will automatically:
-   - Encrypt all files in the Documents and Downloads folders
-   - Use the predefined password
-   - Show operation progress
+3. Execute o `AutoEncryptor.exe`
+4. O programa irá automaticamente:
+   - Criptografar todos os arquivos nas pastas Documentos e Downloads
+   - Usar a senha pré-definida
+   - Mostrar o progresso da operação
 
-## Security
+## Segurança
 
-- Uses Fernet encryption (AES-128-CBC)
-- Implements PBKDF2HMAC for key derivation
-- Passwords are processed securely
-- Original files are removed after encryption
-- Encrypted files are removed after decryption
+- Utiliza criptografia Fernet (AES-128-CBC)
+- Implementa PBKDF2HMAC para derivação de chaves
+- Senhas são processadas de forma segura
+- Arquivos originais são removidos após criptografia
+- Arquivos criptografados são removidos após descriptografia
 
-## Important Warnings
+## Avisos Importantes
 
 1. **AutoEncryptor.exe**:
-   - Automatically encrypts all files in Documents and Downloads folders
-   - Keep the predefined password in a safe place
-   - Backup important files before use
-   - The process cannot be undone without the correct password
+   - Criptografa automaticamente todos os arquivos nas pastas Documentos e Downloads
+   - Mantenha a senha pré-definida em um lugar seguro
+   - Faça backup dos arquivos importantes antes de usar
+   - O processo não pode ser desfeito sem a senha correta
 
 2. **SecureExplorer.exe**:
-   - Use strong passwords
-   - Keep your passwords in a safe place
-   - Backup important files before encryption
-   - Do not lose the password, as there is no way to recover files without it
+   - Use senhas fortes
+   - Mantenha suas senhas em um lugar seguro
+   - Faça backup dos arquivos importantes antes de criptografá-los
+   - Não perca a senha, pois não há como recuperar arquivos sem ela
 
-## Legal Notice
+## Aviso Legal
 
-This software is provided "as is", without warranties. The developer is not responsible for any data loss or problems arising from the use of this software. Use at your own risk. 
+Este software é fornecido "como está", sem garantias. O desenvolvedor não se responsabiliza por qualquer perda de dados ou problemas decorrentes do uso deste software. Use por sua conta e risco. 
